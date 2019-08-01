@@ -130,7 +130,7 @@ http {
       
       location /inject {
         default_type application/json;
-        return 200 '{{"{{"}} env "INJECT" {{"}}"}}';
+        return 200 '<%= ENV["INJECT"] %>';
     	}
 
       {{if ne .LocationInclude ""}}
