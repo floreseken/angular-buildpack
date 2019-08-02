@@ -1,5 +1,5 @@
 ---
-language: staticfile
+language: angular
 default_versions:
 - name: nginx
   version: 1.15.x
