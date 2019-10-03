@@ -2,40 +2,16 @@
 language: angular
 default_versions:
 - name: nginx
-  version: 1.15.x
+  version: 1.17.x
 dependencies:
 - name: nginx
-  version: 1.15.12
-  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.15.12-linux-x64-cflinuxfs2-4d0440ef.tgz
-  sha256: 4d0440ef3bd59478e8adae2d8bebd329b7e8fa63abdd242f3696bc28677e2f6a
-  cf_stacks:
-  - cflinuxfs2
-  source: http://nginx.org/download/nginx-1.15.12.tar.gz
-  source_sha256: 3d5b90aa17de1700709ae4ec6c4d73d87c888b06c510391bf7104b006fdb2abe
-- name: nginx
-  version: 1.15.12
-  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.15.12-linux-x64-cflinuxfs3-4b82e605.tgz
-  sha256: 4b82e60517a49e6c4320415e460e8ef7975764b469bb570a5dce0a90fdf47173
+  version: 1.17.4
+  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.17.4-linux-x64-cflinuxfs3-ed4aa971.tgz
+  sha256: ed4aa971a29a4bc804976e1eb65d72f069a48afd7f11738b4674da675b25285f
   cf_stacks:
   - cflinuxfs3
-  source: http://nginx.org/download/nginx-1.15.12.tar.gz
-  source_sha256: 3d5b90aa17de1700709ae4ec6c4d73d87c888b06c510391bf7104b006fdb2abe
-- name: nginx
-  version: 1.17.0
-  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.17.0-linux-x64-cflinuxfs2-f35aff96.tgz
-  sha256: f35aff96e3daf4f1655586682a8732f812fb105935d30299c2a505de6f769249
-  cf_stacks:
-  - cflinuxfs2
-  source: http://nginx.org/download/nginx-1.17.0.tar.gz
-  source_sha256: e21b5d06cd53e86afb94f0b3678e0abb0c0f011433471fa3d895cefa65ae0fab
-- name: nginx
-  version: 1.17.0
-  uri: https://buildpacks.cloudfoundry.org/dependencies/nginx-static/nginx-1.17.0-linux-x64-cflinuxfs3-10287b21.tgz
-  sha256: 10287b218411cd972ee1747f5a93e5efd6aa5d4dc4c089b4883cb419905abd5c
-  cf_stacks:
-  - cflinuxfs3
-  source: http://nginx.org/download/nginx-1.17.0.tar.gz
-  source_sha256: e21b5d06cd53e86afb94f0b3678e0abb0c0f011433471fa3d895cefa65ae0fab
+  source: http://nginx.org/download/nginx-1.17.4.tar.gz
+  source_sha256: 62854b365e66670ef4f1f8cc79124f914551444da974207cd5fe22d85710e555
 pre_package: scripts/build.sh
 include_files:
 - CHANGELOG
@@ -52,3 +28,8 @@ include_files:
 - bin/release
 - bin/supply
 - manifest.yml
+dependency_deprecation_dates:
+- version_line: 1.17.x
+  name: nginx
+  date: 2020-05-01
+  link: https://nginx.org/
